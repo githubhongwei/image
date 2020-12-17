@@ -69,8 +69,9 @@
 	<script>
 		var closBtn = $('#closBtn');
 		closBtn.on('click', function() {
-			var win = window.self;	
-			win.close();
+			window.opener = null;
+			window.open("", "_self");
+			window.close();
 		});
 	</script>
 </html>
