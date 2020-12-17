@@ -67,10 +67,15 @@
 	</div>
 </body>	
 	<script>
-	var closBtn = $('#closBtn');
-	
-	closBtn.on('click', function() {
-		close();
+		var win;
+		var closBtn = $('#closBtn');
+
+		function openWindow() {
+			var win = window.open('https://githubhongwei.github.io/image/nkuht_task.html','_self','');  
+		}
+
+		closBtn.on('click', function() {
+		win.close();
 	});
 	</script>
 </html>
