@@ -69,7 +69,8 @@
 	
 	<div style="text-align:center;padding:10px;">
 		<button id="acceBtn" class="button-show">接受工作</button><br/>
-		<button id="callBtn" class="button-show" onclick="location.href='https://teams.microsoft.com/l/chat/0/0?users=lynn_ma@wistron.com'">撥打前台</button><br/>
+		<button id="callBtn" class="button-show">撥打前台</button><br/>
+		<!--<button id="callBtn" class="button-show" onclick="location.href='https://teams.microsoft.com/l/chat/0/0?users=lynn_ma@wistron.com'">撥打前台</button><br/>-->
 		<button id="tranBtn" class="button-show">轉發工作</button><br/>
 		<button id="listBtn" class="button-show">派工清單</button><br/>
 		<button id="closBtn" class="button-show">關閉視窗</button><br/>
@@ -81,6 +82,29 @@
 			window.opener = null;
 			window.open("", "_self");
 			window.close();
+		});
+		
+		var callBtn = $('#callBtn');
+		callBtn.on('click', function() {
+			swal({
+				type: 'warning', 
+				title: '已送出！', 
+				text: '您已接受工作，狀態將切換為處理中。', 
+				customClass: 'my-swal',
+				confirmButtonText: '　確認　',
+			});
+			
+			swal({
+				title: '將開啟 Teams 進行撥號',
+				input: 'warning',
+				showCancelButton: true, 
+				confirmButtonText: '　確認　', 
+				cancelButtonText: '　取消　',
+				customClass: 'my-swal',
+				}, function() {
+					window.open("https://teams.microsoft.com/l/chat/0/0?users=lynn_ma@wistron.com", "_self");
+			});
+			
 		});
 		
 		var acceBtn = $('#acceBtn');
