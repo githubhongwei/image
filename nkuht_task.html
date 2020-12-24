@@ -4,6 +4,10 @@
 <head>
 	<meta charset="UTF-8">
 	<script src="https://code.jquery.com/jquery-1.9.1.js"></script>
+	<!--引用SweetAlert2-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.10.3/sweetalert2.css"/>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.10.3/sweetalert2.js" type="text/javascript"></script>
+	
 	<title>NKUHT Task Dispatch</title>
 	<style>
 		h1 {
@@ -37,6 +41,10 @@
 			padding: 10px 5px;
 			color: #000000;
 			background-color:#ffd2ab;	
+		}
+		
+		.my-swal{
+			zoom: 1.6 !important;
 		}
 	</style>
 </head>
@@ -77,12 +85,26 @@
 		
 		var acceBtn = $('#acceBtn');
 		acceBtn.on('click', function() {
+			swal({
+				type: 'warning', 
+				title: '已送出！', 
+				text: '您已接受工作，狀態將切換為處理中。', 
+				customClass: 'my-swal',
+				confirmButtonText: '　確認　',
+			});
 			document.getElementById("gsAssigner").innerHTML = "　指派人員：ethan_li@wistron.com";
 			document.getElementById("gsStatus").innerHTML = "　狀態：處理中";
 		});
 		
 		var tranBtn = $('#tranBtn');
 		tranBtn.on('click', function() {
+			swal({
+				type: 'warning', 
+				title: '已送出！', 
+				text: '您已轉發工作，狀態將切換為待處理。', 
+				customClass: 'my-swal',
+				confirmButtonText: '　確認　',
+			});
 			document.getElementById("gsAssigner").innerHTML = "　指派人員：bin_liu@wistron.com";
 			document.getElementById("gsStatus").innerHTML = "　狀態：待處理（已轉發）";
 		});
