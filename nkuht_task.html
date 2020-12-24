@@ -86,7 +86,7 @@
 		var acceBtn = $('#acceBtn');
 		acceBtn.on('click', function() {
 			swal({
-				type: 'warning', 
+				type: 'success', 
 				title: '已送出！', 
 				text: '您已接受工作，狀態將切換為處理中。', 
 				customClass: 'my-swal',
@@ -99,14 +99,14 @@
 		var tranBtn = $('#tranBtn');
 		tranBtn.on('click', function() {
 			swal({
-				type: 'warning', 
+				type: 'success', 
 				title: '已送出！', 
 				text: '您已轉發工作，狀態將切換為待處理。', 
 				customClass: 'my-swal',
 				confirmButtonText: '　確認　',
 			});
-			document.getElementById("gsAssigner").innerHTML = "　指派人員：bin_liu@wistron.com";
-			document.getElementById("gsStatus").innerHTML = "　狀態：待處理（已轉發）";
+			document.getElementById("gsAssigner").innerHTML = '<font color="blue">' + "　指派人員：bin_liu@wistron.com" +'</font>';
+			document.getElementById("gsStatus").innerHTML = '<font color="blue">' + "　狀態：待處理（已轉發）" +'</font>';
 		});
 		
 		function QueryID(){
