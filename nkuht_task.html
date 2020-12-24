@@ -85,18 +85,10 @@
 		});
 		
 		var callBtn = $('#callBtn');
-		callBtn.on('click', function() {
-			swal({
-				type: 'warning', 
-				title: '已送出！', 
-				text: '您已接受工作，狀態將切換為處理中。', 
-				customClass: 'my-swal',
-				confirmButtonText: '　確認　',
-			});
-			
+		callBtn.on('click', function() {	
 			swal({
 				title: '將開啟 Teams 進行撥號',
-				input: 'warning',
+				type: 'warning',
 				showCancelButton: true, 
 				confirmButtonText: '　確認　', 
 				cancelButtonText: '　取消　',
@@ -104,7 +96,6 @@
 				}, function() {
 					window.open("https://teams.microsoft.com/l/chat/0/0?users=lynn_ma@wistron.com", "_self");
 			});
-			
 		});
 		
 		var acceBtn = $('#acceBtn');
