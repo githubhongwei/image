@@ -46,7 +46,7 @@
 		<h1>NKUHT Task Dispatch</h1>
 	</div>
 	<div style="padding:10px;">
-		<h2>　件號：RS2020121702601</h2>
+		<h2 id="ticketID">　件號：RS2020121702601</h2>
 		<h2>　時間：2020/12/17上午09:32</h2>
 		<h2>　房號：202</h2>
 		<h2>　事件：更換備品/床單*1</h2>
@@ -92,7 +92,7 @@
 				<!-- alert(decodeURIComponent(aryPara.username)); -->
 			}
 				
-			document.getElementById("nameString").innerHTML = aryPara.id;
+			document.getElementById("ticketID").innerHTML = "件號：" + aryPara.id;
 		}
 	</script>
 </html>
