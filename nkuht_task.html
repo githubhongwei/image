@@ -93,13 +93,8 @@
 				confirmButtonText: '　確認　', 
 				cancelButtonText: '　取消　',
 				customClass: 'my-swal',
-				}, function() {
-					alert(decodeURIComponent("撥打中"));
-					window.opener = null;
-					window.open("https://teams.microsoft.com/l/chat/0/0?users=lynn_ma@wistron.com", "_self");
 			}).then(function(result) {
 				alert(decodeURIComponent("撥打中"));
-				window.opener = null;
 				window.open("https://teams.microsoft.com/l/chat/0/0?users=lynn_ma@wistron.com", "_self");
 			});
 		});
