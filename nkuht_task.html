@@ -69,8 +69,7 @@
 	
 	<div style="text-align:center;padding:10px;">
 		<button id="acceBtn" class="button-show">接受工作</button><br/>
-		<button id="callBtn" class="button-show">撥打前台</button><br/>
-		<!--<button id="callBtn" class="button-show" onclick="location.href='https://teams.microsoft.com/l/chat/0/0?users=lynn_ma@wistron.com'">撥打前台</button><br/>-->
+		<button id="callBtn" class="button-show">聯絡前台</button><br/>
 		<button id="tranBtn" class="button-show">轉發工作</button><br/>
 		<button id="listBtn" class="button-show">派工清單</button><br/>
 		<button id="closBtn" class="button-show">關閉視窗</button><br/>
@@ -87,16 +86,16 @@
 		var callBtn = $('#callBtn');
 		callBtn.on('click', function() {	
 			swal({
-				title: '將開啟 Teams 進行撥號',
+				title: '將開啟 Teams 應用程式！',
+				text: '請於 Microsoft Teams 對話視窗中進行通話。',
 				type: 'warning',
 				showCancelButton: true, 
 				confirmButtonText: '　確認　', 
 				cancelButtonText: '　取消　',
 				customClass: 'my-swal',
 			}).then(function(result) {
-				alert(decodeURIComponent("撥打中"));
 				window.open("https://teams.microsoft.com/l/chat/0/0?users=lynn_ma@wistron.com", "_self");
-			});
+			}).catch(swal.noop);;
 		});
 		
 		var acceBtn = $('#acceBtn');
